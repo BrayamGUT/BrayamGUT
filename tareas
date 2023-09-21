@@ -1,0 +1,40 @@
+tareas = []
+
+while True:
+    print("Opciones:")
+    print("1. Agregar tarea")
+    print("2. Eliminar tarea")
+    print("3. Mostrar tareas")
+    print("4. Salir")
+    
+    opcion = input("Elija una opción: ")
+
+    if opcion == "4":
+        break
+
+    if opcion == "1":
+        tarea = input("Ingrese una tarea: ")
+        tareas.append(tarea)
+        print("Tarea agregada.")
+    elif opcion == "2":
+        if tareas:
+            print("Tareas pendientes:")
+            for i, tarea in enumerate(tareas):
+                print(f"{i + 1}. {tarea}")
+            indice = int(input("Ingrese el número de la tarea que desea eliminar: ")) - 1
+            if 0 <= indice < len(tareas):
+                tareas.pop(indice)
+                print("Tarea eliminada.")
+            else:
+                print("Número de tarea no válido.")
+        else:
+            print("No hay tareas pendientes.")
+    elif opcion == "3":
+        if tareas:
+            print("Tareas pendientes:")
+            for i, tarea in enumerate(tareas):
+                print(f"{i + 1}. {tarea}")
+        else:
+            print("No hay tareas pendientes.")
+    else:
+        print("Opción no válida")
