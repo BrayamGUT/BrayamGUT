@@ -1,0 +1,28 @@
+# Calculadora de gastos para estudiantes universitarios
+
+# Función para solicitar un gasto al usuario
+def solicitar_gasto(nombre):
+    while True:
+        try:
+            gasto = float(input(f"Ingrese el gasto mensual de {nombre}: $"))
+            return gasto
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+# Solicitar información sobre los gastos
+Internet = solicitar_gasto("Internet")
+alimentacion = solicitar_gasto("alimentación")
+transporte = solicitar_gasto("transporte")
+almuerzo = solicitar_gasto("almuerzo")
+
+
+# Calcular el total de gastos
+total_gastos = Internet + alimentacion + transporte + almuerzo 
+
+# Mostrar el resultado
+print("\nResumen de gastos mensuales:")
+print(f"Internet: ${Internet:.2f}")
+print(f"Alimentación: ${alimentacion:.2f}")
+print(f"Transporte: ${transporte:.2f}")
+print(f"almuerzo: ${almuerzo:.2f}")
+print(f"Total de gastos mensuales: ${total_gastos:.2f}")
